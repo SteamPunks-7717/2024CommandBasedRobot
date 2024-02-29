@@ -41,16 +41,16 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
 
-  //   driveSubsystem.setDefaultCommand(
-  //       // The left stick controls translation of the robot.
-  //       // Turning is controlled by the X axis of the right stick.
-  //       new RunCommand(
-  //           () -> driveSubsystem.drive(
-  //               -MathUtil.applyDeadband(driverJoystick.getY(), InputConstants.kDriveDeadband),
-  //               -MathUtil.applyDeadband(driverJoystick.getX(), InputConstants.kDriveDeadband),
-  //               -MathUtil.applyDeadband(driverJoystick.getRawAxis(4), InputConstants.kDriveDeadband),
-  //               false, false),
-  //           driveSubsystem));
+    driveSubsystem.setDefaultCommand(
+        // The left stick controls translation of the robot.
+        // Turning is controlled by the X axis of the right stick.
+        new RunCommand(
+            () -> driveSubsystem.drive(
+                -MathUtil.applyDeadband(driverJoystick.getY(), InputConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(driverJoystick.getX(), InputConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(driverJoystick.getRawAxis(4), InputConstants.kDriveDeadband),
+                false, true),
+            driveSubsystem));
   }
   /**
    * Use this method to define your trigger->command mappings. Triggers can be created via the

@@ -74,7 +74,7 @@ public class IntakeSubsystem extends SubsystemBase {
       // Action to execute when command is running
       () -> this.spin(),
       // Action to run when command is interrupted
-      interrupted -> this.stop(),
+      (interrupted) -> this.stop(),
       // IsFinished (condition to end command)
       () -> this.switchPressed == true,
       // Requirements

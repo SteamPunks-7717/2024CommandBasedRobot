@@ -49,7 +49,7 @@ public class RobotContainer {
                 -MathUtil.applyDeadband(driverJoystick.getY(), InputConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(driverJoystick.getX(), InputConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(driverJoystick.getRawAxis(4), InputConstants.kDriveDeadband),
-                false, true),
+                true, true),
             driveSubsystem));
   }
   /**

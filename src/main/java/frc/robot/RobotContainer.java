@@ -5,11 +5,14 @@
 package frc.robot;
 
 import frc.robot.Constants.InputConstants;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.commands.Autos;
+import frc.robot.commands.ShootCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.FunctionalCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
@@ -72,19 +75,28 @@ public class RobotContainer {
     new Trigger(driverJoystick.button(3)).onFalse(shooterSubsystem.stopMotors());
 
 
-    new Trigger (driverJoystick.button(6))
+    new Trigger (driverJoystick.button(8))
         .whileTrue(new RunCommand(
             () -> driveSubsystem.setX(),
             driveSubsystem));
     new Trigger (driverJoystick.button(4)).whileTrue(intakeSubsystem.intakeNote());
+    new Trigger(driverJoystick.button(5)).onTrue(
+      new ShootCommand(shooterSubsystem, ShooterConstants.SpeakerSpeed, 
+      ShooterConstants.SpeakerSpeed).andThen(intakeSubsystem.turnOnMotors()).andThen(Commands.waitSeconds(0.5)).andThen(intakeSubsystem.stopMotors()).andThen(shooterSubsystem.stopMotors())
+    );
 
-  }
+    new Trigger(driverJoystick.button(6)).onTrue(
+      new ShootCommand(shooterSubsystem, 0, 
+      ShooterConstants.AmpLowerMotorSpeed).andThen(intakeSubsystem.turnOnMotors()).andThen(Commands.waitSeconds(3)).andThen(intakeSubsystem.stopMotors()).andThen(shooterSubsystem.stopMotors())
+    );
+  } 
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
    * @return the command to run in autonomous
    */
+
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
     return Autos.exampleAuto(m_exampleSubsystem);

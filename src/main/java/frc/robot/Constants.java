@@ -54,12 +54,15 @@ public final class Constants {
   }
 
   public static final class ModuleConstants {
-    // The MAXSwerve module can be configured with one of three pinion gears: 12T, 13T, or 14T.
-    // This changes the drive speed of the module (a pinion gear with more teeth will result in a
+    // The MAXSwerve module can be configured with one of three pinion gears: 12T,
+    // 13T, or 14T.
+    // This changes the drive speed of the module (a pinion gear with more teeth
+    // will result in a
     // robot that drives faster).
     public static final int kDrivingMotorPinionTeeth = 14;
 
-    // Invert the turning encoder, since the output shaft rotates in the opposite direction of
+    // Invert the turning encoder, since the output shaft rotates in the opposite
+    // direction of
     // the steering motor in the MAXSwerve Module.
     public static final boolean kTurningEncoderInverted = true;
 
@@ -67,7 +70,8 @@ public final class Constants {
     public static final double kDrivingMotorFreeSpeedRps = NeoMotorConstants.kFreeSpeedRpm / 60;
     public static final double kWheelDiameterMeters = 0.0762;
     public static final double kWheelCircumferenceMeters = kWheelDiameterMeters * Math.PI;
-    // 45 teeth on the wheel's bevel gear, 22 teeth on the first-stage spur gear, 15 teeth on the bevel pinion
+    // 45 teeth on the wheel's bevel gear, 22 teeth on the first-stage spur gear, 15
+    // teeth on the bevel pinion
     public static final double kDrivingMotorReduction = (45.0 * 22) / (kDrivingMotorPinionTeeth * 15);
     public static final double kDriveWheelFreeSpeedRps = (kDrivingMotorFreeSpeedRps * kWheelCircumferenceMeters)
         / kDrivingMotorReduction;
@@ -104,11 +108,24 @@ public final class Constants {
     public static final int kTurningMotorCurrentLimit = 20; // amps
   }
 
-  public static final class ShooterConstants{
+  public static final class ShooterConstants {
 
-    public static final double SpeakerSpeed = 0.5;
-    public static final double AmpLowerMotorSpeed = 0.450;
+    public static final double SpeakerSpeed = -0.2;
+    public static final double AmpLowerMotorSpeed = -0.450;
+
+    public static double kP = 6e-5;
+    public static double kI = 0;
+    public static double kD = 0;
+    public static double kIz = 0;
+    public static double kFF = 0.000015;
+    public static double kMaxOutput = 0.6;
+    public static double kMinOutput = -0.6;
+    public static double maxRPM = 5700;
+
+    public static double PID_acceptable_threshold = 100;
+    public static double counter_max = 5/0.02;
   }
+
   public static final class InputConstants {
     public static final int kDriverControllerPort = 0;
     public static final double kDriveDeadband = 0.05;

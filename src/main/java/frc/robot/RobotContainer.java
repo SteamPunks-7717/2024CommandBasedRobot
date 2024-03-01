@@ -66,10 +66,13 @@ public class RobotContainer {
     
     new Trigger(driverJoystick.button(1)).onTrue(intakeSubsystem.turnOnMotors());
     new Trigger(driverJoystick.button(1)).onFalse(intakeSubsystem.stopMotors());
-    new Trigger(driverJoystick.button(2)).onTrue(shooterSubsystem.shootNote());
+    new Trigger(driverJoystick.button(2)).onTrue(shooterSubsystem.shootSpeaker());
     new Trigger(driverJoystick.button(2)).onFalse(shooterSubsystem.stopMotors());
+    new Trigger(driverJoystick.button(3)).onTrue(shooterSubsystem.shootAmp());
+    new Trigger(driverJoystick.button(3)).onFalse(shooterSubsystem.stopMotors());
 
-    new Trigger (driverJoystick.button(3))
+
+    new Trigger (driverJoystick.button(6))
         .whileTrue(new RunCommand(
             () -> driveSubsystem.setX(),
             driveSubsystem));

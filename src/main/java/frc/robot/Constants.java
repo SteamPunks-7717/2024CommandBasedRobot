@@ -40,15 +40,15 @@ public final class Constants {
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
     // SPARK MAX CAN IDs
-    public static final int kFrontLeftDrivingCanId = 9;
-    public static final int kRearLeftDrivingCanId = 11;
-    public static final int kFrontRightDrivingCanId = 7;
-    public static final int kRearRightDrivingCanId = 5;
+    public static final int kFrontLeftDrivingCanId = 5;//9;
+    public static final int kRearLeftDrivingCanId = 7;//11;
+    public static final int kFrontRightDrivingCanId = 11;//7; 
+    public static final int kRearRightDrivingCanId = 9;//5;
 
-    public static final int kFrontLeftTurningCanId = 10;
-    public static final int kRearLeftTurningCanId = 12;
-    public static final int kFrontRightTurningCanId = 8;
-    public static final int kRearRightTurningCanId = 6;
+    public static final int kFrontLeftTurningCanId = 6;//10;
+    public static final int kRearLeftTurningCanId = 8;//12;
+    public static final int kFrontRightTurningCanId = 12;//8;
+    public static final int kRearRightTurningCanId = 10;//6;
 
     public static final boolean kGyroReversed = false;
   }
@@ -110,20 +110,22 @@ public final class Constants {
 
   public static final class ShooterConstants {
 
-    public static final double SpeakerSpeed = -0.2;
+    public static final double SpeakerSpeed = -0.6;
+    public static final double SpeakerRPM = -2000;
     public static final double AmpLowerMotorSpeed = -0.450;
+    public static final double AmpLowerMotorRPM = -1350;
 
     public static double kP = 6e-5;
-    public static double kI = 0;
+    public static double kI = 2.5e-7;
     public static double kD = 0;
     public static double kIz = 0;
-    public static double kFF = 0.000015;
-    public static double kMaxOutput = 0.6;
-    public static double kMinOutput = -0.6;
+    public static double kFF = 2e-5;
+    public static double kMaxOutput = 1;
+    public static double kMinOutput = -1;
     public static double maxRPM = 5700;
 
     public static double PID_acceptable_threshold = 100;
-    public static double counter_max = 5/0.02;
+    public static double counter_max = 2/0.02;
   }
 
   public static final class InputConstants {

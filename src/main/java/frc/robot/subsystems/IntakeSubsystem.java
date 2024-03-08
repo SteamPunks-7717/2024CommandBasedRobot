@@ -50,9 +50,9 @@ public class IntakeSubsystem extends SubsystemBase {
         });
   }
 
-  public void spin(){
-     motor_intake_upper.set(intake_speed);
-      motor_intake_lower.set(-intake_speed);
+  public void spin(double _intake_speed){
+     motor_intake_upper.set(_intake_speed);
+      motor_intake_lower.set(-_intake_speed);
   }
   public void stop(){
     motor_intake_upper.set(0);
@@ -72,7 +72,7 @@ public class IntakeSubsystem extends SubsystemBase {
     return new FunctionalCommand(
       () -> switchPressed = !limitSwitch.get(),
       // Action to execute when command is running
-      () -> this.spin(),
+      () -> this.spin(0.4),
       // Action to run when command is interrupted
       (interrupted) -> this.stop(),
       // IsFinished (condition to end command)

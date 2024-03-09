@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.39,
-      "y": 5.504197471499269
+      "x": 1.41,
+      "y": 5.53
     },
-    "rotation": 0.0
+    "rotation": 180.0
   },
   "command": {
     "type": "sequential",
@@ -14,13 +14,25 @@
         {
           "type": "named",
           "data": {
-            "name": "getShootAmpCommand()"
+            "name": "shootAmp"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "center to first note"
+            "pathName": "Center path"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "back to speaker center"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shootAmp"
           }
         }
       ]

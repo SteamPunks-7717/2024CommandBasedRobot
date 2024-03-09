@@ -3,37 +3,37 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.376954204297391,
-        "y": 5.545975061415541
+        "x": 1.41,
+        "y": 5.53
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.426954204297391,
-        "y": 5.545975061415541
+        "x": 1.3160004226878683,
+        "y": 5.53
       },
-      "isLocked": true,
-      "linkedName": null
+      "isLocked": false,
+      "linkedName": "Speaker center"
     },
     {
       "anchor": {
-        "x": 2.7451702740555612,
-        "y": 5.545975061415541
+        "x": 2.0,
+        "y": 5.53
       },
       "prevControl": {
-        "x": 1.5642141640308678,
-        "y": 5.545975061415541
+        "x": 1.7251653513338518,
+        "y": 5.53
       },
       "nextControl": null,
       "isLocked": true,
-      "linkedName": null
+      "linkedName": "Center note "
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [
     {
-      "name": "intakeNote",
-      "waypointRelativePos": 0.3,
+      "name": "intake Note",
+      "waypointRelativePos": 0.35,
       "command": {
         "type": "parallel",
         "data": {
@@ -41,7 +41,7 @@
             {
               "type": "named",
               "data": {
-                "name": "intakeSubsystem.intakeNote()"
+                "name": "intakeNote"
               }
             }
           ]
@@ -56,14 +56,14 @@
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
-    "velocity": 0.0,
-    "rotation": 0.0,
+    "velocity": 0,
+    "rotation": 180.0,
     "rotateFast": false
   },
   "reversed": false,
   "folder": null,
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": 180.0,
     "velocity": 0
   },
   "useDefaultConstraints": true

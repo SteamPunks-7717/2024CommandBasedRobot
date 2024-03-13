@@ -27,14 +27,14 @@ public class ClimberSubsystem extends SubsystemBase {
   public Command extend() {
     return runOnce(
         () -> {
-          climberMotor.set(0.2);
+          climberMotor.set(1.0);
 
         });
   }
   public Command retract() {
     return runOnce(
         () -> {
-          climberMotor.set(-0.2);
+          climberMotor.set(-1.0);
 
         });
   }

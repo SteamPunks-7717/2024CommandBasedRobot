@@ -33,7 +33,7 @@ public class IntakeSubsystem extends SubsystemBase {
     limitSwitch = new DigitalInput(0);
     switchPressed = !limitSwitch.get();
     SmartDashboard.putBoolean("LimitSwitch",false);
-    SmartDashboard.putNumber("intakeSpeed", intake_speed);
+    //SmartDashboard.putNumber("intakeSpeed", intake_speed);
   }
 
   /**
@@ -46,7 +46,7 @@ public class IntakeSubsystem extends SubsystemBase {
         () -> {
         motor_intake_upper.set(intake_speed);
         motor_intake_lower.set(-intake_speed);
-        SmartDashboard.putNumber("intakeSpeed", intake_speed);
+        //SmartDashboard.putNumber("intakeSpeed", intake_speed);
         });
   }
 
@@ -64,7 +64,7 @@ public class IntakeSubsystem extends SubsystemBase {
         () -> {
         motor_intake_upper.set(0);
         motor_intake_lower.set(0);
-        SmartDashboard.putNumber("intakeSpeed", intake_speed);
+        //SmartDashboard.putNumber("intakeSpeed", intake_speed);
         });
   }
 
@@ -86,7 +86,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     switchPressed = !limitSwitch.get();
 
-    intake_speed = SmartDashboard.getNumber("intakeSpeed", intake_speed);
+   // intake_speed = SmartDashboard.getNumber("intakeSpeed", intake_speed);
     SmartDashboard.putBoolean("LimitSwitch", switchPressed);
   }
 

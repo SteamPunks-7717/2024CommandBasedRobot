@@ -19,7 +19,7 @@ public final class Constants {
     public static final double kMaxAngularSpeed = 1 * Math.PI; // radians per second
 
     public static final double kDirectionSlewRate = 1.0; // radians per second
-    public static final double kMagnitudeSlewRate = 1.0; // percent per second (1 = 100%)
+    public static final double kMagnitudeSlewRate = 0.50; // percent per second (1 = 100%)
     public static final double kRotationalSlewRate = 1.0; // percent per second (1 = 100%)
 
     // Chassis configuration
@@ -40,15 +40,15 @@ public final class Constants {
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
     // SPARK MAX CAN IDs
-    public static final int kFrontLeftDrivingCanId = 5;//9;
-    public static final int kRearLeftDrivingCanId = 7;//11;
-    public static final int kFrontRightDrivingCanId = 11;//7; 
-    public static final int kRearRightDrivingCanId = 9;//5;
+    public static final int kFrontLeftDrivingCanId = 9;//5;
+    public static final int kRearLeftDrivingCanId = 11;//7;
+    public static final int kFrontRightDrivingCanId = 7;//11; 
+    public static final int kRearRightDrivingCanId = 5;//9;
 
-    public static final int kFrontLeftTurningCanId = 6;//10;
-    public static final int kRearLeftTurningCanId = 8;//12;
-    public static final int kFrontRightTurningCanId = 12;//8;
-    public static final int kRearRightTurningCanId = 10;//6;
+    public static final int kFrontLeftTurningCanId = 10;//6;
+    public static final int kRearLeftTurningCanId = 12;//8;
+    public static final int kFrontRightTurningCanId = 8;//12;
+    public static final int kRearRightTurningCanId = 6;//10;
 
     public static final boolean kGyroReversed = true;
   }
@@ -59,7 +59,7 @@ public final class Constants {
     // This changes the drive speed of the module (a pinion gear with more teeth
     // will result in a
     // robot that drives faster).
-    public static final int kDrivingMotorPinionTeeth = 14;
+    public static final int kDrivingMotorPinionTeeth = 13;
 
     // Invert the turning encoder, since the output shaft rotates in the opposite
     // direction of
@@ -104,7 +104,7 @@ public final class Constants {
     public static final IdleMode kDrivingMotorIdleMode = IdleMode.kBrake;
     public static final IdleMode kTurningMotorIdleMode = IdleMode.kBrake;
 
-    public static final int kDrivingMotorCurrentLimit = 50; // amps
+    public static final int kDrivingMotorCurrentLimit = 40; // ampss
     public static final int kTurningMotorCurrentLimit = 20; // amps
   }
 
@@ -121,7 +121,7 @@ public final class Constants {
     public static double kIz = 0;
     public static double kFF = 2e-5;
     public static double kMaxOutput = 1;
-    public static double kMinOutput = -1;
+    public static double kMinOutput = -1; 
     public static double maxRPM = 5700;
 
     public static double PID_acceptable_threshold = 100;

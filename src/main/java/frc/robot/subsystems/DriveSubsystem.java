@@ -72,8 +72,7 @@ public class DriveSubsystem extends SubsystemBase {
           m_frontRight.getPosition(),
           m_rearLeft.getPosition(),
           m_rearRight.getPosition()
-      },
-      new Pose2d(new Translation2d(),new Rotation2d(Math.PI/2)));
+      });
 
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
@@ -301,5 +300,7 @@ public class DriveSubsystem extends SubsystemBase {
     SwerveModuleState[] targetStates = DriveConstants.kDriveKinematics.toSwerveModuleStates(targetSpeeds);
     setModuleStates(targetStates);
   }
+
+  //command to reset gyro at speaker
 
 }

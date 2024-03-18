@@ -31,8 +31,6 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooter_upper_PID = motor_shooter_upper.getPIDController();
     m_shooter_lower_PID = motor_shooter_lower.getPIDController();
 
-    SmartDashboard.putNumber("upperSpeed", upperSpeed);
-    SmartDashboard.putNumber("lowerSpeed", lowerSpeed);
 
     // set PID coefficients
     m_shooter_upper_PID.setP(ShooterConstants.kP);
@@ -102,8 +100,8 @@ public class ShooterSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    upperSpeed = SmartDashboard.getNumber("upperSpeed", upperSpeed);
-    lowerSpeed = SmartDashboard.getNumber("lowerSpeed", lowerSpeed);
+    // upperSpeed = SmartDashboard.getNumber("upperSpeed", upperSpeed);
+    // lowerSpeed = SmartDashboard.getNumber("lowerSpeed", lowerSpeed);
 
     // read PID coefficients from SmartDashboard
     double p = SmartDashboard.getNumber("P Gain", 0);

@@ -43,10 +43,8 @@ public class ShootCommand extends Command {
   }
     shooterSubsystem.m_shooter_lower_PID.setReference(lower_setPoint, CANSparkMax.ControlType.kVelocity);
 
-    SmartDashboard.putNumber("SetPoint Upper", upper_setPoint);
-    SmartDashboard.putNumber("SetPoint Lower", lower_setPoint);
-    SmartDashboard.putNumber("counter", counter);
-    SmartDashboard.putNumber("endCounter", end_counter);
+  //  SmartDashboard.putNumber("SetPoint Upper", upper_setPoint);
+  //  SmartDashboard.putNumber("SetPoint Lower", lower_setPoint);
 
 
     end_counter = 0;
@@ -62,10 +60,7 @@ public class ShootCommand extends Command {
   public void execute() {
     SmartDashboard.putNumber("Upper variable (RPM)", shooterSubsystem.motor_shooter_upper.getEncoder().getVelocity());
     SmartDashboard.putNumber("Lower variable (RPM)", shooterSubsystem.motor_shooter_lower.getEncoder().getVelocity());
-    lower_setPoint = SmartDashboard.getNumber("SetPoint Lower", lower_setPoint);
-
-    SmartDashboard.putNumber("counter", counter);
-    SmartDashboard.putNumber("endCounter", end_counter);
+    //lower_setPoint = SmartDashboard.getNumber("SetPoint Lower", lower_setPoint);
 
     double upper_pid_error = Math
         .abs(shooterSubsystem.motor_shooter_lower.getEncoder().getVelocity() - lower_setPoint);

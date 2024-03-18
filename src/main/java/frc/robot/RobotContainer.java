@@ -89,7 +89,7 @@ public class RobotContainer {
                 -MathUtil.applyDeadband(driverJoystick.getY() * 0.90, InputConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(driverJoystick.getX() * 0.90, InputConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(driverJoystick.getRawAxis(4) * 0.90, InputConstants.kDriveDeadband),
-                false, true),
+                true, true),
             driveSubsystem));
   }
 
@@ -114,10 +114,16 @@ public class RobotContainer {
     new Trigger(driverJoystick.button(1)).onTrue(shooterSubsystem.shootSpeaker());
     new Trigger(driverJoystick.button(1)).onFalse(shooterSubsystem.stopMotors());
 
-    new Trigger(driverJoystick.axisGreaterThan(2, 0.5)).whileTrue(climberSubsystem.retract());
+    //climber triggers
+    new Trigger(driverJoystick.axisGreaterThan(2, 0.5)).whileTrue(climberSubsystem.retract(1.0));
     new Trigger(driverJoystick.axisGreaterThan(2, 0.5)).onFalse(climberSubsystem.stop());
-    new Trigger(driverJoystick.axisGreaterThan(3, 0.5)).whileTrue(climberSubsystem.extend());
+    new Trigger(driverJoystick.axisGreaterThan(3, 0.5)).whileTrue(climberSubsystem.extend(1.0));
     new Trigger(driverJoystick.axisGreaterThan(3, 0.5)).onFalse(climberSubsystem.stop());
+
+    //servo triggers
+    new Trigger(driverJoystick.povLeft()).onTrue(climberSubsystem.servoOut());
+    new Trigger(driverJoystick.povRight()).onTrue(climberSubsystem.servoIn());
+
 
     new Trigger(driverJoystick.button(6))
         .whileTrue(new RunCommand(
@@ -131,6 +137,13 @@ public class RobotContainer {
 
     new Trigger(driverJoystick.button(3)).onTrue(
         getShootSpeakerCommand());
+
+    new Trigger(driverJoystick.button(8)).whileTrue(
+       new RunCommand(
+        () -> {
+          driveSubsystem.zeroHeading();
+        }, driveSubsystem)
+    );
 
   }
 
